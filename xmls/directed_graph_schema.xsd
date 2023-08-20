@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Definition for non-negative float -->
+  <xsd:simpleType name="nonNegativeFloat">
+    <xsd:restriction base="xsd:float">
+      <xsd:minInclusive value="0"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <!-- Definition for the graph -->
+  <xsd:element name="graph">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="id" type="xsd:string"/>
+        <xsd:element name="name" type="xsd:string"/>
+        <xsd:element name="nodes">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="node" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="id" type="xsd:string"/>
+                    <xsd:element name="name" type="xsd:string"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+
+          <!-- Check all nodes have unique IDs -->
+    <!-- <xsd:unique name="UniqueNodeId"> -->
+    <!--    <xsd:selector xpath="node"/> -->
+    <!--    <xsd:field xpath="id"/> -->
+    <!-- </xsd:unique> -->
+
+        </xsd:element>
+        <xsd:element name="edges" minOccurs="0">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="edge" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="id" type="xsd:string"/>
+                    <xsd:element name="from" type="xsd:string"/>
+                    <xsd:element name="to" type="xsd:string"/>
+                    <xsd:element name="cost" type="nonNegativeFloat" minOccurs="0"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+
+          <xsd:unique name="UniqueEdgeId">
+            <xsd:selector xpath="edge"/>
+            <xsd:field xpath="id"/>
+          </xsd:unique>
+
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Check key constraints -->
+    <xsd:key name="NodeId">
+      <xsd:selector xpath="nodes/node"/>
+      <xsd:field xpath="id"/>
+    </xsd:key>
+    <xsd:keyref name="edgeFromRef" refer="NodeId">
+      <xsd:selector xpath="edges/edge"/>
+      <xsd:field xpath="from"/>
+    </xsd:keyref>
+    <xsd:keyref name="edgeToRef" refer="NodeId">
+      <xsd:selector xpath="edges/edge"/>
+      <xsd:field xpath="to"/>
+    </xsd:keyref>
+
+  </xsd:element>
+
+</xsd:schema>

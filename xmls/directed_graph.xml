@@ -1,0 +1,150 @@
+<graph>
+  <id>g0</id>
+  <name>The Graph Name</name>
+  <nodes>
+    <node>
+      <id>a</id>
+      <name>A name</name>
+    </node>
+    <node>
+      <id>b</id>
+      <name>B name</name>
+    </node>
+    <node>
+      <id>c</id>
+      <name>C name</name>
+    </node>
+    <node>
+      <id>d</id>
+      <name>D name</name>
+    </node>
+    <node>
+      <id>e</id>
+      <name>E name</name>
+    </node>
+    <node>
+      <id>f</id>
+      <name>F name</name>
+    </node>
+    <node>
+      <id>g</id>
+      <name>G name</name>
+    </node>
+    <node>
+      <id>h</id>
+      <name>H name</name>
+    </node>
+    <node>
+      <id>j</id>
+      <name>J name</name>
+    </node>
+    <node>
+      <id>k</id>
+      <name>K name</name>
+    </node>
+    <node>
+      <id>l</id>
+      <name>L name</name>
+    </node>
+    <node>
+      <id>m</id>
+      <name>M name</name>
+    </node>
+    <node>
+      <id>n</id>
+      <name>N name</name>
+    </node>
+  </nodes>
+  <edges>
+    <edge>
+      <id>e1</id>
+      <from>a</from>
+      <to>b</to>
+      <cost>0.5</cost>
+    </edge>
+    <edge>
+      <id>e2</id>
+      <from>b</from>
+      <to>c</to>
+      <cost>10.0</cost>
+    </edge>
+    <edge>
+      <id>e3</id>
+      <from>b</from>
+      <to>e</to>
+      <cost>42.0</cost>
+    </edge>
+    <edge>
+      <id>e4</id>
+      <from>c</from>
+      <to>d</to>
+      <cost>5.0</cost>
+    </edge>
+    <edge>
+      <id>e5</id>
+      <from>d</from>
+      <to>e</to>
+      <cost>0.8</cost>
+    </edge>
+    <edge>
+      <id>e6</id>
+      <from>e</from>
+      <to>a</to>
+      <cost>0.42</cost>
+    </edge>
+    <edge>
+      <id>e7</id>
+      <from>e</from>
+      <to>f</to>
+      <cost>1.0</cost>
+    </edge>
+    <edge>
+      <id>e8</id>
+      <from>e</from>
+      <to>h</to>
+      <cost>0.53</cost>
+    </edge>
+    <edge>
+      <id>e9</id>
+      <from>g</from>
+      <to>g</to>
+      <cost>0.5</cost>
+    </edge>
+    <edge>
+      <id>e10</id>
+      <from>h</from>
+      <to>j</to>
+      <cost>0.5</cost>
+    </edge>
+    <edge>
+      <id>e11</id>
+      <from>j</from>
+      <to>h</to>
+      <cost>0.5</cost>
+    </edge>
+    <edge>
+      <id>e12</id>
+      <from>a</from>
+      <to>k</to>
+      <cost>6</cost>
+    </edge>
+    <edge>
+      <id>e13</id>
+      <from>k</from>
+      <to>l</to>
+      <cost>7</cost>
+    </edge>
+    <edge>
+      <id>e14</id>
+      <from>l</from>
+      <to>m</to>
+      <cost>8</cost>
+    </edge>
+    <edge>
+      <id>e15</id>
+      <from>m</from>
+      <to>n</to>
+      <cost>9</cost>
+    </edge>
+  </edges>
+</graph>

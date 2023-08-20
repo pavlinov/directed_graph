@@ -1,0 +1,25 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+    # load data from dump.sql
+    volumes:
+      - ./db_dump/graph_db.sql:/docker-entrypoint-initdb.d/dump.sql
+
+  # got to:
+  # http://localhost:8080/?server=db&username=postgres&db=postgres&ns=public&pgsql=db
+  # password: example
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
